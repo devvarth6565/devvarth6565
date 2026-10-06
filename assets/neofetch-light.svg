@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="582" viewBox="0 0 1000 582" font-family="ConsolasFallback,Consolas,'SF Mono',Menlo,'DejaVu Sans Mono','Courier New',monospace" role="img" aria-label="neofetch card for devvarth6565">
+<style>
+.k{fill:#953800} .v{fill:#0a3069} .d{fill:#afb8c1} .p{fill:#24292f}
+.h{fill:#8250df;font-weight:700} .g{fill:#1a7f37;font-weight:700}
+.add{fill:#1a7f37} .del{fill:#cf222e} .m{fill:#57606a}
+.ln{opacity:0;animation:in .35s ease-out forwards}
+@keyframes in{from{opacity:0;transform:translateX(-6px)}to{opacity:1;transform:none}}
+@keyframes glow{0%,100%{opacity:.55}50%{opacity:1}}
+.edge{animation:glow 4s ease-in-out infinite}
+text{white-space:pre}
+</style>
+<defs>
+<linearGradient id="art" x1="0" y1="0" x2=".6" y2="1" spreadMethod="reflect">
+  <stop offset="0" stop-color="#0969da"/><stop offset=".5" stop-color="#8250df"/><stop offset="1" stop-color="#bf3989"/>
+  <animateTransform attributeName="gradientTransform" type="translate" values="0 0;.5 .5;0 0" dur="8s" repeatCount="indefinite"/>
+</linearGradient>
+<linearGradient id="edge" x1="0" y1="0" x2="1" y2="0">
+  <stop offset="0" stop-color="#0969da"/><stop offset=".5" stop-color="#8250df"/><stop offset="1" stop-color="#bf3989"/>
+</linearGradient>
+<linearGradient id="beam" x1="0" y1="0" x2="0" y2="1">
+  <stop offset="0" stop-color="#8250df" stop-opacity="0"/><stop offset="1" stop-color="#8250df" stop-opacity=".55"/>
+</linearGradient>
+<clipPath id="reveal"><rect x="0" y="71.3" width="1000" height="0">
+  <animate attributeName="height" from="0" to="475.4" begin=".3s" dur="1.8s" fill="freeze" calcMode="spline" keySplines=".4 0 .2 1" keyTimes="0;1"/>
+</rect></clipPath>
+<clipPath id="typed"><rect x="450.4" y="56" width="0" height="24">
+  <animate attributeName="width" values="0.0;8.4;16.8;25.2;33.6;42.0;50.4;58.8;67.2;75.6;84.0;92.4;100.8;109.2;117.6;126.0;134.4;142.8;151.2;159.6;168.0;176.4;184.8;193.2;201.6;210.0;218.4;226.8;235.2" begin=".2s" dur="0.9s" fill="freeze" calcMode="discrete"/>
+</rect></clipPath>
+<pattern id="crt" width="4" height="4" patternUnits="userSpaceOnUse"><rect width="4" height="1" fill="#24292f" opacity=".035"/></pattern>
+</defs>
+<rect x=".5" y=".5" width="999" height="581" rx="12" fill="#f6f8fa" stroke="#d0d7de"/>
+<rect class="edge" x="1" y="1" width="998" height="580" rx="12" fill="none" stroke="url(#edge)" stroke-width="1.5"/>
+<path d="M1 34V13a12 12 0 0 1 12-12h974a12 12 0 0 1 12 12V34z" fill="#eaeef2"/>
+<line x1="1" y1="34" x2="999" y2="34" stroke="#d0d7de"/>
+<circle cx="22" cy="17.0" r="6" fill="#ff5f56"/>
+<circle cx="42" cy="17.0" r="6" fill="#ffbd2e"/>
+<circle cx="62" cy="17.0" r="6" fill="#27c93f"/>
+<text x="500.0" y="21.5" text-anchor="middle" font-size="13" class="m">devvarth@github: ~/devvarth6565 — zsh</text>
+<g clip-path="url(#reveal)"><text font-size="10" fill="url(#art)" xml:space="preserve">
+<tspan x="22" y="84.7">                        ,*fcvnli*=*/=&#x27;</tspan>
+<tspan x="22" y="96.1">                .~|1xvJphhkbb$$bdbkppQol=.</tspan>
+<tspan x="22" y="107.5">              !Lh%Xb0ombwZ0CmwQ0wqmdqk#$W8wi</tspan>
+<tspan x="22" y="118.9">            /d#bqbQppkwazoapd0OO%bp0ZqOph&amp;BWqc/.</tspan>
+<tspan x="22" y="130.3">         ^xaqpXUhC/%ZQwhWMM&amp;b0CCaaJO0bXXwqmwk8MC.</tspan>
+<tspan x="22" y="141.7">       `nhd#%&amp;MpwOLOzw&amp;@@M#bqpdddb0pdqQUUCQq0mbL*&#x27;</tspan>
+<tspan x="22" y="153.1">      `LhmX%8&amp;CoZpdkh&amp;&amp;@W$mUYOUOCaQ0wdmwqwmmh%XwcOz,</tspan>
+<tspan x="22" y="164.5">     ;Cw#h8M#Op0ZqqmCpXZLJLYOOwqbmmdd%%hZwdpb%W$Uczoi`</tspan>
+<tspan x="22" y="175.9">     ~hukq8#k%mLpX%$XpYpwQJbXdkkkbkdq00bhqbwwph&amp;&amp;o^v:,</tspan>
+<tspan x="22" y="187.3">     :#pU$&amp;h$bq&amp;&amp;%%%%qk0UXW&amp;W8Xkk0qXhhbmqd#d0wdkXWmUi=:</tspan>
+<tspan x="22" y="198.7">  &#x27;&#x27;. +o0h8Xbq#$8BM&amp;#8%k#MMXhXhw0ZYCYZmpOd0bdqQk&amp;%#W$L^.</tspan>
+<tspan x="22" y="210.1">       -owMM#0##@@&amp;%8&amp;WWW%%8#kdQQ000Z0ph%#Oqh#h##kX#qL`</tspan>
+<tspan x="22" y="221.5">        id#$%B&amp;$#XhkhhWWBkOk$hbd#%&amp;#dbbhXXmOpwmdqqhdZj&#x27;</tspan>
+<tspan x="22" y="232.9">        QXbQX@@d|~=|1L$8M&amp;OpX8#&amp;MMB&amp;$&amp;Wkmmb#Xqq$$X##hr&#x27;</tspan>
+<tspan x="22" y="244.3">       .Y&amp;mc&amp;@@m= &#x27;~&quot;&quot;jLYqZLhY0Uqkb#k0aliahMBBBBW&amp;wCt&#x27;</tspan>
+<tspan x="22" y="255.7">       ~|qw#8@@O; .....`:!rltoufl1t1|+~;;!QM@BB@@%1</tspan>
+<tspan x="22" y="267.1">         /pWB@W+ .*nzux1f!--^^^!l1xxoJc=. ;%@MBW0&#x27;</tspan>
+<tspan x="22" y="278.5">           *CB# .awmpkh%#h1-&quot;=ldbdbpbkX%u  8Bpi`</tspan>
+<tspan x="22" y="289.9">           nJnb  :jOLW$CbU/&#x27;&#x27;~1awqh$0Uo!- .#j0z</tspan>
+<tspan x="22" y="301.3">           -jY0  :+ijaJLmoi` ^fcwCcYruxt~ ~XvCl</tspan>
+<tspan x="22" y="312.7">            +wo ....;=++-:&quot; .=/!^+!!=-;--&#x27;!&amp;o|</tspan>
+<tspan x="22" y="324.1">            `!r,,,`.....&#x27;,` .^||:`&#x27;`,:-&quot;~,nr|</tspan>
+<tspan x="22" y="335.5">             :1&quot;;-,&#x27;.&#x27;,=+`   `^||~,``;~^&quot;*c|</tspan>
+<tspan x="22" y="346.9">              ;r&quot;--;-^jl!1^;:lci^+*~~&quot;^^=c~.</tspan>
+<tspan x="22" y="358.3">               ri&quot;-:^xYn!xqdX&amp;0ojjc1+==+nu</tspan>
+<tspan x="22" y="369.7">               *zll!&quot;^wmcvJLunvcCk#l^=inm+</tspan>
+<tspan x="22" y="381.1">               .xznrj^*-^^/it*||*^!=*nJmv</tspan>
+<tspan x="22" y="392.5">                 !pOni^.&#x27;|YkhZr=&quot;*!loqw*</tspan>
+<tspan x="22" y="403.9">                  ^UkLv, &#x27;;^+~,`&#x27;^oYbL;</tspan>
+<tspan x="22" y="415.3">                 `^^jmXm|~,~^:;^jpkJjl~.</tspan>
+<tspan x="22" y="426.7">            .&#x27;.. &quot;|=!lxZk#h&amp;W%#$kCrlilf&#x27;&#x27;.</tspan>
+<tspan x="22" y="438.1">         `&quot;^&quot;,.. ;c!*//i1fcLQYzu1li||fo .~!+:.</tspan>
+<tspan x="22" y="449.5">      &#x27;-|!~~&#x27;    ,fx+*!|!ijvouxjt/||l0n  ,~+it=:.</tspan>
+<tspan x="22" y="460.9">   .`~|*;:``&#x27;&#x27;.  .`wn*=++!trxf1ii|||cM! &#x27;::-~^t1!~,.</tspan>
+<tspan x="22" y="472.3">`&#x27;,:^|*-~^~&#x27;&#x27;`&#x27;.   thx/*!/tj1tlti!|rp#` &#x27;,---&quot;~*|!*&quot;-,&#x27;</tspan>
+<tspan x="22" y="483.7">,,,`;&quot;,,;^`&#x27;...    .XOn1li/tt11t/irzhC  &#x27;::;:~&quot;-^&quot;=^*~-~;`&#x27;.</tspan>
+<tspan x="22" y="495.1">,.``,::&quot;^-         &#x27;!xujljjfuurl/1joXz  &#x27;,::::~;-~~&quot;+&quot;&quot;~^&quot;-;</tspan>
+<tspan x="22" y="506.5">.`&quot;&quot;~&quot;=+:.  `*fzQdql&#x27; ,=*i1j1i*^&quot;~=!f,.  ..&#x27;``~-&quot;^;;~~;~-~~&quot;</tspan>
+<tspan x="22" y="517.9">, `;-~^;&#x27;*1oCourfruoLacn^~&quot;~;~~~~!nc~`bpn~.   `^^-:;~-;--:;:</tspan>
+<tspan x="22" y="529.3"> .:-;:    ...`,:::-^+|jLo!^=-;*lnunuurczLU0Uon!~;;;;;--;::``</tspan>
+<tspan x="22" y="540.7">`.;^~&#x27;         .&#x27;`:-=-,|r/*|!xxrl^&quot;&quot;&quot;~-;,&#x27;&#x27;``&#x27;&#x27;`` ``::;;;~-&quot;</tspan>
+</text></g>
+<rect x="16" y="61.3" width="372.0" height="14" fill="url(#beam)" opacity="0"><animate attributeName="y" from="61.3" to="536.7" begin=".3s" dur="1.8s" fill="freeze" calcMode="spline" keySplines=".4 0 .2 1" keyTimes="0;1"/><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.05;.9;1" begin=".3s" dur="1.8s" fill="freeze"/></rect>
+<text x="400" y="74" font-size="14" xml:space="preserve"><tspan class="g">➜ </tspan><tspan class="h">~</tspan><tspan class="p"> $ </tspan></text>
+<text clip-path="url(#typed)" x="450.4" y="74" font-size="14" class="p" xml:space="preserve">neofetch --user devvarth6565</text>
+<text class="ln" style="animation-delay:1.15s" x="400" y="93" font-size="14" xml:space="preserve"><tspan class="g">devvarth@github</tspan><tspan class="p"> ─────────────────────────────────────────────────</tspan></text>
+<text class="ln" style="animation-delay:1.22s" x="400" y="112" font-size="14" xml:space="preserve"><tspan class="k">OS</tspan><tspan class="p">: </tspan><tspan class="d">....................................... </tspan><tspan class="v">macOS, Linux, Android</tspan></text>
+<text class="ln" style="animation-delay:1.29s" x="400" y="131" font-size="14" xml:space="preserve"><tspan class="k">Uptime</tspan><tspan class="p">: </tspan><tspan class="d">................................ </tspan><tspan class="v">1 year, 9 months, 8 days</tspan></text>
+<text class="ln" style="animation-delay:1.36s" x="400" y="150" font-size="14" xml:space="preserve"><tspan class="k">Host</tspan><tspan class="p">: </tspan><tspan class="d">....................................... </tspan><tspan class="v">India, Planet Earth</tspan></text>
+<text class="ln" style="animation-delay:1.43s" x="400" y="169" font-size="14" xml:space="preserve"><tspan class="k">Kernel</tspan><tspan class="p">: </tspan><tspan class="d">.................. </tspan><tspan class="v">Full-Stack Engineer · AI Agent Builder</tspan></text>
+<text class="ln" style="animation-delay:1.50s" x="400" y="188" font-size="14" xml:space="preserve"><tspan class="k">IDE</tspan><tspan class="p">: </tspan><tspan class="d">............................... </tspan><tspan class="v">VS Code, Cursor, Claude Code</tspan></text>
+<text class="ln" style="animation-delay:1.64s" x="400" y="226" font-size="14" xml:space="preserve"><tspan class="k">Languages</tspan><tspan class="p">.</tspan><tspan class="k">Programming</tspan><tspan class="p">: </tspan><tspan class="d">..... </tspan><tspan class="v">TypeScript, JavaScript, Python, Java</tspan></text>
+<text class="ln" style="animation-delay:1.71s" x="400" y="245" font-size="14" xml:space="preserve"><tspan class="k">Languages</tspan><tspan class="p">.</tspan><tspan class="k">Computer</tspan><tspan class="p">: </tspan><tspan class="d">.............. </tspan><tspan class="v">HTML, CSS, SQL, JSON, Markdown</tspan></text>
+<text class="ln" style="animation-delay:1.78s" x="400" y="264" font-size="14" xml:space="preserve"><tspan class="k">Languages</tspan><tspan class="p">.</tspan><tspan class="k">Real</tspan><tspan class="p">: </tspan><tspan class="d">.................................. </tspan><tspan class="v">English, Hindi</tspan></text>
+<text class="ln" style="animation-delay:1.92s" x="400" y="302" font-size="14" xml:space="preserve"><tspan class="k">Stack</tspan><tspan class="p">.</tspan><tspan class="k">Frontend</tspan><tspan class="p">: </tspan><tspan class="d">.......... </tspan><tspan class="v">Next.js, React 19, Tailwind, shadcn/ui</tspan></text>
+<text class="ln" style="animation-delay:1.99s" x="400" y="321" font-size="14" xml:space="preserve"><tspan class="k">Stack</tspan><tspan class="p">.</tspan><tspan class="k">Backend</tspan><tspan class="p">: </tspan><tspan class="d">............. </tspan><tspan class="v">Node, Express, tRPC, Drizzle, Prisma</tspan></text>
+<text class="ln" style="animation-delay:2.06s" x="400" y="340" font-size="14" xml:space="preserve"><tspan class="k">Stack</tspan><tspan class="p">.</tspan><tspan class="k">AI</tspan><tspan class="p">: </tspan><tspan class="d">................... </tspan><tspan class="v">AI SDK, OpenAI, Groq, AgentKit, MCP</tspan></text>
+<text class="ln" style="animation-delay:2.13s" x="400" y="359" font-size="14" xml:space="preserve"><tspan class="k">Stack</tspan><tspan class="p">.</tspan><tspan class="k">Cloud</tspan><tspan class="p">: </tspan><tspan class="d">................ </tspan><tspan class="v">Neon, MongoDB, Vercel, Daytona, E2B</tspan></text>
+<text class="ln" style="animation-delay:2.27s" x="400" y="397" font-size="14" xml:space="preserve"><tspan class="p">- </tspan><tspan class="h">Contact</tspan><tspan class="p"> ───────────────────────────────────────────────────────</tspan></text>
+<text class="ln" style="animation-delay:2.34s" x="400" y="416" font-size="14" xml:space="preserve"><tspan class="k">Email</tspan><tspan class="p">.</tspan><tspan class="k">Personal</tspan><tspan class="p">: </tspan><tspan class="d">..................... </tspan><tspan class="v">devvarthsinghwork@gmail.com</tspan></text>
+<text class="ln" style="animation-delay:2.41s" x="400" y="435" font-size="14" xml:space="preserve"><tspan class="k">GitHub</tspan><tspan class="p">: </tspan><tspan class="d">................................. </tspan><tspan class="v">github.com/devvarth6565</tspan></text>
+<text class="ln" style="animation-delay:2.55s" x="400" y="473" font-size="14" xml:space="preserve"><tspan class="p">- </tspan><tspan class="h">GitHub Stats</tspan><tspan class="p"> ──────────────────────────────────────────────────</tspan></text>
+<text class="ln" style="animation-delay:2.62s" x="400" y="492" font-size="14" xml:space="preserve"><tspan class="k">Repos</tspan><tspan class="p">: </tspan><tspan class="d">....................... </tspan><tspan class="v">16</tspan><tspan class="p"> | </tspan><tspan class="k">Stars</tspan><tspan class="p">: </tspan><tspan class="d">.................... </tspan><tspan class="v">2</tspan></text>
+<text class="ln" style="animation-delay:2.69s" x="400" y="511" font-size="14" xml:space="preserve"><tspan class="k">Commits</tspan><tspan class="p">: </tspan><tspan class="d">.................... </tspan><tspan class="v">125</tspan><tspan class="p"> | </tspan><tspan class="k">Contributions</tspan><tspan class="p">: </tspan><tspan class="d">.......... </tspan><tspan class="v">159</tspan></text>
+<text class="ln" style="animation-delay:2.76s" x="400" y="530" font-size="14" xml:space="preserve"><tspan class="k">Lines of Code</tspan><tspan class="p">: </tspan><tspan class="d">............... </tspan><tspan class="v">648,573</tspan><tspan class="p"> ( </tspan><tspan class="add">1,024,840++</tspan><tspan class="p">, </tspan><tspan class="del">376,267--</tspan><tspan class="p"> )</tspan></text>
+<text class="ln" style="animation-delay:2.83s" x="400" y="549" font-size="14" xml:space="preserve"><tspan class="g">➜ </tspan><tspan class="h">~</tspan><tspan class="p"> $ </tspan></text>
+<rect class="ln" style="animation-delay:2.83s" x="451.4" y="536" width="8" height="16" fill="#1a7f37"><animate attributeName="fill-opacity" values="1;1;0;0" keyTimes="0;.5;.5;1" dur="1s" repeatCount="indefinite"/></rect>
+<rect x="1" y="34" width="998" height="547" rx="12" fill="url(#crt)" pointer-events="none"/>
+</svg>
