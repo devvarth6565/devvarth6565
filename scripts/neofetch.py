@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Render the neofetch-style terminal card on the profile README.
+"""Render the neofetch-style terminal card (animated avatar + live stats) on the profile README.
 
 Pulls live GitHub stats (repos, stars, commits, contributions, lines of code)
 and writes animated SVGs for dark and light mode. Standard library only, so the
@@ -8,6 +8,7 @@ GraphQL-only "contributed to" count; without it the last known values in
 assets/stats.json are reused for anything that cannot be fetched.
 """
 
+import base64
 import datetime as dt
 import html
 import json
@@ -166,8 +167,7 @@ def build_lines(s):
     kv("Kernel", "Full-Stack Engineer · AI Agent Builder")
     kv("IDE", "VS Code, Cursor, Claude Code")
     blank()
-    kv("Languages.Programming", "TypeScript, JavaScript, Python, Java")
-    kv("Languages.Computer", "HTML, CSS, SQL, JSON, Markdown")
+    kv("Languages.Code", "TypeScript, JavaScript, Python, Java")
     kv("Languages.Real", "English, Hindi")
     blank()
     kv("Stack.Frontend", "Next.js, React 19, Tailwind, shadcn/ui")
@@ -175,9 +175,9 @@ def build_lines(s):
     kv("Stack.AI", "AI SDK, OpenAI, Groq, AgentKit, MCP")
     kv("Stack.Cloud", "Neon, MongoDB, Vercel, Daytona, E2B")
     blank()
-    header("Contact")
-    kv("Email.Personal", "devvarthsinghwork@gmail.com")
-    kv("GitHub", f"github.com/{USER}")
+    kv("Now.Building", "agents that write & run code")
+    kv("Now.Learning", "MCP servers, LangGraph, RAG, evals")
+    kv("Contact.Email", "devvarthsinghwork@gmail.com")
     blank()
     header("GitHub Stats")
 
@@ -217,19 +217,19 @@ THEMES = {
 FONT = "ConsolasFallback,Consolas,'SF Mono',Menlo,'DejaVu Sans Mono','Courier New',monospace"
 W = 1000
 BAR = 34
-ASCII_FS, ASCII_LH, ASCII_X = 10, 11.4, 22
+AV_CX, AV_R = 195, 92  # avatar centre x and photo radius
 INFO_FS, INFO_LH, INFO_X = 14, 19, 400
 PAD_TOP = 28
 
 
-def render(theme, lines, ascii_rows):
+def render(theme, lines, avatar_uri):
     t = THEMES[theme]
     n = len(lines) + 2  # prompt line + info + trailing prompt
-    body_h = max(n * INFO_LH, len(ascii_rows) * ASCII_LH)
+    body_h = n * INFO_LH
     H = int(BAR + PAD_TOP + body_h + 26)
-    ascii_h = len(ascii_rows) * ASCII_LH
-    ascii_y0 = BAR + PAD_TOP + (body_h - ascii_h) / 2
     info_y0 = BAR + PAD_TOP + 2
+    cx, R = AV_CX, AV_R
+    cy = BAR + PAD_TOP + body_h / 2 - 48  # leave room for the name plate below
 
     prefix_w = 6 * INFO_FS * 0.6  # width of the "➜ ~ $ " prompt
     cmd_x = INFO_X + prefix_w
@@ -251,23 +251,26 @@ def render(theme, lines, ascii_rows):
 @keyframes in{{from{{opacity:0;transform:translateX(-6px)}}to{{opacity:1;transform:none}}}}
 @keyframes glow{{0%,100%{{opacity:.55}}50%{{opacity:1}}}}
 .edge{{animation:glow 4s ease-in-out infinite}}
+.pop{{opacity:0;transform-box:fill-box;transform-origin:center;animation:pop .9s cubic-bezier(.2,.9,.3,1.3) .2s forwards}}
+@keyframes pop{{from{{opacity:0;transform:scale(.6)}}to{{opacity:1;transform:none}}}}
+.pulse{{transform-box:fill-box;transform-origin:center;animation:pulse 2s ease-out infinite}}
+@keyframes pulse{{0%{{opacity:.8;transform:scale(1)}}100%{{opacity:0;transform:scale(3)}}}}
 text{{white-space:pre}}
 </style>""")
     g1, g2, g3 = t["grad"]
     a(f"""<defs>
-<linearGradient id="art" x1="0" y1="0" x2=".6" y2="1" spreadMethod="reflect">
-  <stop offset="0" stop-color="{g1}"/><stop offset=".5" stop-color="{g2}"/><stop offset="1" stop-color="{g3}"/>
-  <animateTransform attributeName="gradientTransform" type="translate" values="0 0;.5 .5;0 0" dur="8s" repeatCount="indefinite"/>
+<linearGradient id="holo" x1="0" y1="0" x2="1" y2="1">
+  <stop offset="0" stop-color="{g1}" stop-opacity=".22"/><stop offset=".55" stop-color="{g2}" stop-opacity="0"/><stop offset="1" stop-color="{g3}" stop-opacity=".25"/>
 </linearGradient>
+<radialGradient id="aura"><stop offset=".55" stop-color="{g2}" stop-opacity=".35"/><stop offset="1" stop-color="{g2}" stop-opacity="0"/></radialGradient>
+<clipPath id="face"><circle cx="{cx}" cy="{cy:.1f}" r="{R}"/></clipPath>
+<filter id="blur" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="3"/></filter>
 <linearGradient id="edge" x1="0" y1="0" x2="1" y2="0">
   <stop offset="0" stop-color="{g1}"/><stop offset=".5" stop-color="{g2}"/><stop offset="1" stop-color="{g3}"/>
 </linearGradient>
 <linearGradient id="beam" x1="0" y1="0" x2="0" y2="1">
   <stop offset="0" stop-color="{t['scan']}" stop-opacity="0"/><stop offset="1" stop-color="{t['scan']}" stop-opacity=".55"/>
 </linearGradient>
-<clipPath id="reveal"><rect x="0" y="{ascii_y0 - 4:.1f}" width="{W}" height="0">
-  <animate attributeName="height" from="0" to="{ascii_h + 8:.1f}" begin=".3s" dur="1.8s" fill="freeze" calcMode="spline" keySplines=".4 0 .2 1" keyTimes="0;1"/>
-</rect></clipPath>
 <clipPath id="typed"><rect x="{cmd_x:.1f}" y="{info_y0 - 8}" width="0" height="24">
   <animate attributeName="width" values="{steps}" begin=".2s" dur="{type_dur}s" fill="freeze" calcMode="discrete"/>
 </rect></clipPath>
@@ -284,14 +287,50 @@ text{{white-space:pre}}
     a(f'<text x="{W / 2}" y="{BAR / 2 + 4.5}" text-anchor="middle" font-size="13" class="m">'
       f'devvarth@github: ~/{USER} — zsh</text>')
 
-    # ascii portrait: scanned in, then a slow colour shimmer
-    a(f'<g clip-path="url(#reveal)"><text font-size="{ASCII_FS}" fill="url(#art)" xml:space="preserve">')
-    for i, row in enumerate(ascii_rows):
-        a(f'<tspan x="{ASCII_X}" y="{ascii_y0 + (i + 1) * ASCII_LH - 2:.1f}">{html.escape(row)}</tspan>')
-    a("</text></g>")
-    a(f'<rect x="{ASCII_X - 6}" y="{ascii_y0 - 14:.1f}" width="{60 * ASCII_FS * 0.6 + 12}" height="14" fill="url(#beam)" opacity="0">'
-      f'<animate attributeName="y" from="{ascii_y0 - 14:.1f}" to="{ascii_y0 + ascii_h - 6:.1f}" begin=".3s" dur="1.8s" fill="freeze" calcMode="spline" keySplines=".4 0 .2 1" keyTimes="0;1"/>'
-      f'<animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.05;.9;1" begin=".3s" dur="1.8s" fill="freeze"/></rect>')
+    # holographic avatar: photo in a glowing ring with orbiting tech tags
+    spin = lambda r0, r1, dur: (f'<animateTransform attributeName="transform" type="rotate" '
+                                f'from="{r0} {cx} {cy:.1f}" to="{r1} {cx} {cy:.1f}" dur="{dur}s" repeatCount="indefinite"/>')
+    a('<g class="pop">')
+    a(f'<circle cx="{cx}" cy="{cy:.1f}" r="{R + 70}" fill="url(#aura)">'
+      f'<animate attributeName="r" values="{R + 62};{R + 74};{R + 62}" dur="5s" repeatCount="indefinite"/></circle>')
+    # HUD corner brackets
+    b, L = R + 66, 18
+    for sx, sy in ((-1, -1), (1, -1), (-1, 1), (1, 1)):
+        x, y0 = cx + sx * b, cy + sy * b
+        a(f'<path d="M{x:.1f} {y0 - sy * L:.1f}V{y0:.1f}H{x - sx * L:.1f}" fill="none" stroke="{g1}" stroke-width="2" opacity=".8"/>')
+    a(f'<circle cx="{cx}" cy="{cy:.1f}" r="{R + 50}" fill="none" stroke="{t["border"]}" stroke-width="1"/>')
+    a(f'<circle cx="{cx}" cy="{cy:.1f}" r="{R + 30}" fill="none" stroke="{g1}" stroke-width="1.2" '
+      f'stroke-dasharray="2 7" opacity=".8">{spin(360, 0, 40)}</circle>')
+    a(f'<circle cx="{cx}" cy="{cy:.1f}" r="{R + 14}" fill="none" stroke="url(#edge)" stroke-width="6" '
+      f'stroke-dasharray="120 40 50 40" stroke-linecap="round" filter="url(#blur)" opacity=".7">{spin(0, 360, 9)}</circle>')
+    a(f'<circle cx="{cx}" cy="{cy:.1f}" r="{R + 14}" fill="none" stroke="url(#edge)" stroke-width="3" '
+      f'stroke-dasharray="120 40 50 40" stroke-linecap="round">{spin(0, 360, 9)}</circle>')
+    a(f'<circle cx="{cx}" cy="{cy:.1f}" r="{R + 4}" fill="{t["bg"]}" stroke="{t["border"]}"/>')
+    a(f'<image href="{avatar_uri}" x="{cx - R}" y="{cy - R:.1f}" width="{2 * R}" height="{2 * R}" '
+      f'clip-path="url(#face)" preserveAspectRatio="xMidYMid slice"/>')
+    a(f'<circle cx="{cx}" cy="{cy:.1f}" r="{R}" fill="url(#holo)"/>')
+    a(f'<rect x="{cx - R}" y="{cy - R - 20:.1f}" width="{2 * R}" height="20" fill="url(#beam)" clip-path="url(#face)" opacity=".45">'
+      f'<animate attributeName="y" values="{cy - R - 20:.1f};{cy + R:.1f}" dur="3.2s" repeatCount="indefinite"/></rect>')
+    # orbiting tags
+    orbit_r = R + 50
+    path = f"M{cx - orbit_r} {cy:.1f}a{orbit_r} {orbit_r} 0 1 1 {2 * orbit_r} 0a{orbit_r} {orbit_r} 0 1 1 {-2 * orbit_r} 0"
+    tags = ("AI", "TS", "PY", "JS", "SQL")
+    for i, tag in enumerate(tags):
+        col = (g1, g2, g3, g1, g2)[i]
+        w = 12 + len(tag) * 7.5
+        a(f'<g><rect x="{-w / 2:.1f}" y="-11" width="{w:.1f}" height="22" rx="11" fill="{t["panel"]}" stroke="{col}" stroke-width="1.5"/>'
+          f'<text x="0" y="4.5" text-anchor="middle" font-size="12" font-weight="700" fill="{col}">{tag}</text>'
+          f'<animateMotion path="{path}" dur="30s" begin="-{i * 30 / len(tags):.1f}s" repeatCount="indefinite"/></g>')
+    # name plate
+    ny = cy + R + 92
+    a(f'<text x="{cx}" y="{ny:.1f}" text-anchor="middle" font-size="22" font-weight="700" letter-spacing="3" fill="url(#edge)">DEVVARTH SINGH</text>')
+    a(f'<text x="{cx}" y="{ny + 22:.1f}" text-anchor="middle" font-size="12.5" class="m">full-stack · ai agents · open source</text>')
+    pw, py = 196, ny + 38
+    a(f'<rect x="{cx - pw / 2}" y="{py:.1f}" width="{pw}" height="24" rx="12" fill="{t["bg"]}" stroke="{t["border"]}"/>')
+    a(f'<circle class="pulse" cx="{cx - pw / 2 + 16}" cy="{py + 12:.1f}" r="4" fill="{t["green"]}"/>')
+    a(f'<circle cx="{cx - pw / 2 + 16}" cy="{py + 12:.1f}" r="4" fill="{t["green"]}"/>')
+    a(f'<text x="{cx - pw / 2 + 28}" y="{py + 16.5:.1f}" font-size="12" class="p">online · open to collabs</text>')
+    a('</g>')
 
     # info column
     prompt = '<tspan class="g">➜ </tspan><tspan class="h">~</tspan><tspan class="p"> $ </tspan>'
@@ -327,10 +366,10 @@ def main():
     stats = cache if "--offline" in sys.argv else fetch_stats(cache)
     cache_file.write_text(json.dumps(stats, indent=2) + "\n")
 
-    ascii_rows = (ASSETS / "ascii.txt").read_text().rstrip("\n").split("\n")
+    avatar_uri = "data:image/jpeg;base64," + base64.b64encode((ASSETS / "avatar.jpg").read_bytes()).decode()
     lines = build_lines(stats)
     for theme in THEMES:
-        svg = render(theme, lines, ascii_rows)
+        svg = render(theme, lines, avatar_uri)
         (ASSETS / f"neofetch-{theme}.svg").write_text(svg)
     print(json.dumps(stats, indent=2))
 

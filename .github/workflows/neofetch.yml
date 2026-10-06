@@ -8,7 +8,7 @@ on:
     branches: [main]
     paths:
       - "scripts/**"
-      - "assets/ascii.txt"
+      - "assets/avatar.jpg"
       - ".github/workflows/neofetch.yml"
 
 permissions:
